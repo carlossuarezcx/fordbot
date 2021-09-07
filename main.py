@@ -9,6 +9,8 @@ async def consulta_precio(ctx, nombre):
         texto = ""
     elif lower == "infernus2":
         texto=" "
+    elif lower == "lavin":
+        texto="Ese muchacho es gratis."    
     else:
         texto="Vehículo no encontrado"
 

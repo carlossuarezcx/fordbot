@@ -13,4 +13,4 @@ async def consulta_precio(ctx, nombre):
         texto="Vehículo no encontrado"
 
     await ctx.send(texto)
-bot.run(os.environ('tokendiscord'))
+bot.run(os.environ['tokendiscord'])

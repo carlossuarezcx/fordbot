@@ -8,7 +8,7 @@ bot = commands.Bot(command_prefix ='/')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
     if lower == "infernus2":
-        texto="- Tipo = SportClasico \n- Precio Total = *"+str(110000+3500*hierro+1167*plastico+875*vidrio+20000+20000)+"*"
+        texto="**"+nombre+"**\n     -Tipo = SportClasico \n     -Precio Total = **$ "+str(110000+3500*hierro+1167*plastico+875*vidrio+20000+20000)+".**"
     elif lower == "":
         texto=" "
     elif lower == "calleja":

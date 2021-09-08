@@ -11,6 +11,9 @@ async def consulta_precio(ctx, nombre):
     # = ===============================================================================================
     if lower == "infernus3":
         texto="**"+nombre+"**\n     -Tipo = SportClasico \n     -Precio Total = **$ "+str(110000+3500*hierro+1167*plastico+875*vidrio+20000+20000)+".**"
+    elif lower == "test":
+        salida = "**" + nombre + "**\n\t- Tipo=SportClasico\n\t- Precio Total = **$ {,} .** "
+        texto = salida.format(110000 + 3500 * hierro + 1167 * plastico + 875 * vidrio + 20000 + 20000)
     elif lower == "infernus2":
         texto = "**" + nombre + "**\n\t- Tipo=SportClasico\n\t- Precio Total = **$ " + str(
             110000 + 3500 * hierro + 1167 * plastico + 875 * vidrio + 20000 + 20000) + ".** "

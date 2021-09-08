@@ -13,7 +13,7 @@ async def consulta_precio(ctx, nombre):
     elif lower == "":
         texto=" "
     elif lower == "calleja":
-        texto="Esa muchacha esa una interesada, te sale carísima."    
+        texto="Esa muchacha es una interesada, te sale carísima."
     elif lower == "lavin":
         texto="Ese muchacho es gratis."
     elif lower == "effy":
@@ -24,6 +24,6 @@ async def consulta_precio(ctx, nombre):
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
-    texto = "*Exclusivos de la semana.*_- Baller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"
+    texto = "**Vehículos exclusivos de la semana.**_- \nBaller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"
     await ctx.send(texto)
 bot.run(os.environ['tokendiscord'])

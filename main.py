@@ -68,8 +68,9 @@ async def consulta_precio(ctx, nombre):
                 v=int(x[5])
                 pu=int(x[6])
                 ll=int(x[7])
+                texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
             else:
-                texto="Aún no tenemos esa nave carnal"
+                texto="Aun no tenemos esa nave primo"
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

@@ -59,10 +59,8 @@ async def consulta_precio(ctx, nombre):
     '''
     with open('autoscsvtxt.txt', newline='') as File:
         for row in File:
-            x = row.split(",")
-            print("entrada"+lower)
-            print("auto= "+x[0])
-            if (lower==x[0]):
+            if lower in File.read():
+                x = row.split(",")
                 salida = "**" + x[0] + "**\n\t- Tipo= "+ x[1]+ "\n\t- Precio Total = **${:,}.** "
                 papeles = int(x[2])
                 h=int(x[3])
@@ -70,9 +68,8 @@ async def consulta_precio(ctx, nombre):
                 v=int(x[5])
                 pu=int(x[6])
                 ll=int(x[7])
-                texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
             else:
-                texto="Vehículo no encontrado."
+                texto="Aún no tenemos esa nave carnal"
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

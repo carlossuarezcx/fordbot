@@ -60,7 +60,9 @@ async def consulta_precio(ctx, nombre):
     with open('autoscsvtxt.txt', newline='') as File:
         for row in File:
             x = row.split(",")
-            if (x[0]==lower):
+            print("entrada"+lower)
+            print("auto= "+x[0])
+            if (lower==x[0]):
                 salida = "**" + x[0] + "**\n\t- Tipo= "+ x[1]+ "\n\t- Precio Total = **${:,}.** "
                 papeles = int(x[2])
                 h=int(x[3])

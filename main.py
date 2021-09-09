@@ -7,10 +7,12 @@ bot = commands.Bot(command_prefix ='/')
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
-    # = ===============================================================================================
+    texto=""
+
+    ''''# = ===============================================================================================
     if lower == "infernus3":
         texto="**"+nombre+"**\n     -Tipo = SportClasico \n     -Precio Total = **$ "+str(110000+3500*hierro+1167*plastico+875*vidrio+20000+20000)+".**"
-    
+
     elif lower == "infernus2":
         salida = "**" + nombre + "**\n\t- Tipo=SportClasico\n\t- Precio Total = **${:,}.** "
         texto = salida.format(110000 + 3500 * hierro + 1167 * plastico + 875 * vidrio + 20000 + 20000)
@@ -54,7 +56,21 @@ async def consulta_precio(ctx, nombre):
         texto="Ella es inalcazable, es imposible poner un precio :3"
     else:
         texto="Vehículo no encontrado"
-
+    '''
+    with open('autoscsvtxt.txt', newline='') as File:
+        for row in File:
+            x = row.split(",")
+            if (x[0]==lower):
+                salida = "**" + x[0] + "**\n\t- Tipo= "+ x[1]+ "\n\t- Precio Total = **${:,}.** "
+                papeles = int(x[2])
+                h=int(x[3])
+                p=int(x[4])
+                v=int(x[5])
+                pu=int(x[6])
+                ll=int(x[7])
+                texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
+            else:
+                texto="Vehículo no encontrado."
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix ='/')
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
-    texto=""
+    texto="No tenemos ese vehículo"
 
     ''''# = ===============================================================================================
     if lower == "infernus3":
@@ -58,8 +58,9 @@ async def consulta_precio(ctx, nombre):
         texto="Vehículo no encontrado"
     '''
     with open('autoscsvtxt.txt', newline='') as File:
-        for row in File:
-            if lower in File.read():
+        datos = File.readlines()
+        for row in datos:
+            if lower in row:
                 x = row.split(",")
                 salida = "**" + x[0] + "**\n\t- Tipo= "+ x[1]+ "\n\t- Precio Total = **${:,}.** "
                 papeles = int(x[2])
@@ -69,8 +70,7 @@ async def consulta_precio(ctx, nombre):
                 pu=int(x[6])
                 ll=int(x[7])
                 texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
-            else:
-                texto="Aun no tenemos esa nave primo"
+
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

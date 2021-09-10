@@ -9,6 +9,7 @@ async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
+        texto = "Hola, gracias por preferirnos. \nTodo parece indicar que aún no contamos con " + nombre + "."
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -21,8 +22,6 @@ async def consulta_precio(ctx, nombre):
                     pu=int(x[6])
                     ll=int(x[7])
                     texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
-            else:
-                texto = "Hola, gracias por preferirnos. \nTodo parece indicar que aún no contamos con " + nombre + "."
 
     await ctx.send(texto)
 @bot.command(name='exclusivos')

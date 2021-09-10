@@ -22,12 +22,10 @@ async def consulta_precio(ctx, nombre):
                     pu=int(x[6])
                     ll=int(x[7])
                     texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
-                elif lower=="effy":
-                    texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
-                elif lower == "lavin":
-                    texto = "Hola, esa muchacha es gratis, cualquiera puede tenerla."
-
-
+    if lower == "effy":
+        texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
+    elif lower == "lavin":
+        texto = "Hola, esa muchacha es gratis. Cualquiera puede tenerla."
     await ctx.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

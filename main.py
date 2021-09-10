@@ -14,7 +14,7 @@ async def consulta_precio(ctx, nombre):
             if lower in row:
                 x = row.split(",")
                 if(x[0]==lower):
-                    salida = "**" + x[0] + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
+                    salida = "** Vehículo: " + x[0].capitalize() + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
                     papeles = int(x[2])
                     h=int(x[3])
                     p=int(x[4])

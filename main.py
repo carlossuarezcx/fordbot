@@ -18,7 +18,7 @@ async def consulta_precio(ctx, nombre):
                 x = row.split(",")
                 if(x[0]==lower):
                     salida = "** Vehículo: " + x[0].capitalize() + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
-                    salida2 = "\n\t- Precio total: **${:,}.**"
+                    salida2 = "\n\tPrecio total: **${:,}.**"
                     papeles = int(x[2])
                     h=int(x[3])
                     p=int(x[4])
@@ -30,9 +30,8 @@ async def consulta_precio(ctx, nombre):
                     if img:
                         texto += img
                     embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="\tTipo: " +x[1], colour=0x13D8)
-                    embed.add_field(name="", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="- ", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
-
 
     if lower == "effy":
         texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"

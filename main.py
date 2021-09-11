@@ -12,7 +12,7 @@ async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
-        embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Todo parece indicar que aun no contamos con este vehículo.", colour=0x13D8)
+        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con +"+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
         #texto = "Hola, gracias por preferirnos. \nTodo parece indicar que aún no contamos con __" + nombre + "__."
         for row in datos:
             if lower in row:
@@ -31,7 +31,7 @@ async def consulta_precio(ctx, nombre):
                     if img:
                         texto += img
                     embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="\tTipo: " +x[1], colour=0x13D8)
-                    embed.add_field(name="* Incluye costos de logística *", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
     if lower == "effy":

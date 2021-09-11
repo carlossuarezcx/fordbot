@@ -18,7 +18,7 @@ async def consulta_precio(ctx, nombre):
                 x = row.split(",")
                 if(x[0]==lower):
                     salida = "** Vehículo: " + x[0].capitalize() + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
-                    salida2 = "\n\t**${:,}.** "
+                    salida2 = "\n\t**${:,}.**"
                     papeles = int(x[2])
                     h=int(x[3])
                     p=int(x[4])
@@ -29,7 +29,7 @@ async def consulta_precio(ctx, nombre):
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+lower+".png"
                     if img:
                         texto += img
-                    embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description=+"Tipo: " +x[1], colour=0x13D8)
+                    embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="Tipo: " +x[1], colour=0x13D8)
                     embed.add_field(name="Precio Total", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 

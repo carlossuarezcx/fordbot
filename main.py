@@ -37,7 +37,9 @@ async def consulta_precio(ctx, nombre):
     if lower == "effy":
         texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
     elif lower == "lavin":
-        texto = "Hola, esa muchacha es gratis. Cualquiera puede tenerla."
+        img = "https://site-static.up-cdn.com/f/7e65ffa29ed72bf6902b2068f13931ebf0148d415e03cc6e42af521165ac72ec04e91cd5488cbd45/960x960"
+        embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha es gratis, cualquiera puede tenerla.", colour=0x13D8)
+        embed.set_image(url=img)
     #await ctx.send(texto)
     await ctx.send(embed=embed)
 @bot.command(name='exclusivos')

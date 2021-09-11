@@ -22,6 +22,10 @@ async def consulta_precio(ctx, nombre):
                     pu=int(x[6])
                     ll=int(x[7])
                     texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
+                    img = "https://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+nombre+".png"
+                    if img:
+                        texto += img
+
     if lower == "effy":
         texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
     elif lower == "lavin":

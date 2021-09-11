@@ -30,7 +30,7 @@ async def consulta_precio(ctx, nombre):
                     if img:
                         texto += img
                     embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="\tTipo: " +x[1], colour=0x13D8)
-                    embed.add_field(name="- ", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="  ", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
     if lower == "effy":

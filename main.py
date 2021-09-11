@@ -3,9 +3,9 @@ import os
 import discord
 from discord import Embed
 from discord.ext import commands
-hierro = 50
-plastico = 250
-vidrio = 250
+hierro = 40
+plastico = 210
+vidrio = 210
 bot = commands.Bot(command_prefix ='/')
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):

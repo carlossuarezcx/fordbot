@@ -1,4 +1,6 @@
 import os
+
+import discord
 from discord import Embed
 from discord.ext import commands
 hierro = 50
@@ -31,13 +33,17 @@ async def consulta_precio(ctx, nombre):
                     for Vehiculo, Precio, inline in fields:
                         embed.add_field(Vehiculo=Vehiculo, Precio=Precio, inline=inline)
                     await ctx.send(embed=embed)'''
-
+                    embed = discord.Embed(title=nombre.capitalize(),  description=x[1], colour=0x13D8)
+                    embed.add_field(name="Precio Total: " +salida.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll))
+                    embed.set_image(url=img)
+                    
 
     if lower == "effy":
         texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
     elif lower == "lavin":
         texto = "Hola, esa muchacha es gratis. Cualquiera puede tenerla."
-    await ctx.send(texto)
+    #await ctx.send(texto)
+    await ctx.send(embed=embed)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"

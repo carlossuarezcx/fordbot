@@ -23,14 +23,14 @@ async def consulta_precio(ctx, nombre):
                     pu=int(x[6])
                     ll=int(x[7])
                     texto = salida.format(papeles+ (h* hierro) + (p*plastico) + (v* vidrio) + pu+ll)
-                    img = "https://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+lower+".png"
+                    img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+lower+".png"
                     if img:
                         texto += img
-                    embed = Embed(title=x[0].capitalize(), description=x[1], colour=0x13D8)
+                    '''embed = Embed(title=x[0].capitalize(), description=x[1], colour=0x13D8)
                     fields = [(("Vehículo", "Precio"), True), (img), False]
                     for Vehiculo, Precio, inline in fields:
                         embed.add_field(Vehiculo=Vehiculo, Precio=Precio, inline=inline)
-                    await ctx.send(embed=embed)
+                    await ctx.send(embed=embed)'''
 
 
     if lower == "effy":

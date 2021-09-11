@@ -35,12 +35,13 @@ async def consulta_precio(ctx, nombre):
                     embed.set_image(url=img)
 
     if lower == "effy":
-        texto = "Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:"
+        img="https://cdn.discordapp.com/avatars/439245514060464128/484c45c34c3db6232de8b1151d6071e3.png?size=512"
+        embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:", colour=0x13D8)
+        embed.set_image(url=img)
     elif lower == "lavin":
         img = "https://site-static.up-cdn.com/f/7e65ffa29ed72bf6902b2068f13931ebf0148d415e03cc6e42af521165ac72ec04e91cd5488cbd45/960x960"
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha es gratis, cualquiera puede tenerla.", colour=0x13D8)
         embed.set_image(url=img)
-    #await ctx.send(texto)
     await ctx.send(embed=embed)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

@@ -34,7 +34,7 @@ async def consulta_precio(ctx, nombre):
                         embed.add_field(Vehiculo=Vehiculo, Precio=Precio, inline=inline)
                     await ctx.send(embed=embed)'''
                     embed = discord.Embed(title=nombre.capitalize(),  description=x[1], colour=0x13D8)
-                    embed.add_field(name="Precio Total: " +salida.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="Precio Total", value = salida.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
 

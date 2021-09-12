@@ -72,11 +72,11 @@ async def consulta_ensamble(ctx, nombre):
                     embed.add_field(name="- Costo papeles: $",
                                     value=salida2.format(papeles), inline=False)
                     embed.add_field(name="- Hierro: ",
-                                    value="\t"+h, inline=False)
+                                    value="\t"+str(h), inline=False)
                     embed.add_field(name="- Plástico: ",
-                                    value="\t"+p,online=False)
+                                    value="\t"+str(p),online=False)
                     embed.add_field(name="- Vidrio: ",
-                                    value="\t"+v, inline=False)
+                                    value="\t"+str(v), inline=False)
                     embed.set_image(url=img)
 
     await channel.send(embed=embed)

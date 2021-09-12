@@ -74,7 +74,7 @@ async def consulta_ensamble(ctx, nombre):
                     embed.add_field(name="- Hierro: ",
                                     value="\t"+str(h), inline=False)
                     embed.add_field(name="- Plástico: ",
-                                    value="\t"+str(p),online=False)
+                                    value="\t"+str(p), inline=False)
                     embed.add_field(name="- Vidrio: ",
                                     value="\t"+str(v), inline=False)
                     embed.set_image(url=img)

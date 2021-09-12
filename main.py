@@ -60,7 +60,7 @@ async def consulta_ensamble(ctx, nombre):
             if lower in row:
                 x = row.split(",")
                 if (x[0] == lower):
-                    salida2 = "${:,}."
+                    salida2 = "${:,}"
                     papeles = int(x[2])
                     h = int(x[3])
                     p = int(x[4])

@@ -45,8 +45,8 @@ async def consulta_precio(ctx, nombre):
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"
     await ctx.send(texto)
-
-channel = "886060649103384627"
+client = discord.Client(activity=discord.Game(name='FordMotorCompany'))
+channel = client.get_channel(886060649103384627)
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()

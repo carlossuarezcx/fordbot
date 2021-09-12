@@ -1,7 +1,5 @@
 import os
-
 import discord
-from discord import Embed
 from discord.ext import commands
 hierro = 40
 plastico = 210
@@ -13,7 +11,6 @@ async def consulta_precio(ctx, nombre):
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
-        #texto = "Hola, gracias por preferirnos. \nTodo parece indicar que aún no contamos con __" + nombre + "__."
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -57,7 +54,7 @@ async def consulta_ensamble(ctx, nombre):
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**",
                               description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nFord Motor Company agradece tu preferencia.",
-                              colour=0x13D8)."
+                              colour=0x13D8)
         for row in datos:
             if lower in row:
                 x = row.split(",")

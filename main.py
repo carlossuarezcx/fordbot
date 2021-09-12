@@ -39,6 +39,7 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:", colour=0x13D8)
         embed.set_image(url=img)
     elif lower == "lavin":
+
         img = "https://site-static.up-cdn.com/f/7e65ffa29ed72bf6902b2068f13931ebf0148d415e03cc6e42af521165ac72ec04e91cd5488cbd45/960x960"
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha es gratis, cualquiera puede tenerla.", colour=0x13D8)
         embed.set_image(url=img)
@@ -47,4 +48,39 @@ async def consulta_precio(ctx, nombre):
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"
     await ctx.send(texto)
+
+
+@bot.command(name='cotizar')
+async def consulta_ensamble(ctx, nombre):
+    lower = nombre.lower()
+    with open('autoscsvtxt.txt', newline='') as File:
+        datos = File.readlines()
+        embed = discord.Embed(title="**Hola.**",
+                              description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nFord Motor Company agradece tu preferencia.",
+                              colour=0x13D8)."
+        for row in datos:
+            if lower in row:
+                x = row.split(",")
+                if (x[0] == lower):
+                    salida2 = "${:,}."
+                    papeles = int(x[2])
+                    h = int(x[3])
+                    p = int(x[4])
+                    v = int(x[5])
+                    pu = int(x[6])
+                    ll = int(x[7])
+                    embed.add_field(name="- Costo papeles: $",
+                                    value=salida2.format(papeles), inline=False)
+                    embed.add_field(name="- Hierro: ",
+                                    value=h, inline=False)
+                    embed.add_field(name="- Plástico: ",
+                                    value=p, inline=False)
+                    embed.add_field(name="- Vidrio: ",
+                                    value=v, inline=False)
+                    img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
+                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
+                                          colour=0x13D8)
+                    embed.set_image(url=img)
+
+    await ctx.send(embed=embed)
 bot.run(os.environ['tokendiscord'])

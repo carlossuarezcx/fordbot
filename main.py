@@ -46,7 +46,7 @@ async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 6 \n- Blazer 3\n- Chimera\n- Dukes 3\n- Issi 7\n- Novak\n- Seasparrow 2_"
     await ctx.send(texto)
 
-
+channel = "886060649103384627"
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
@@ -66,18 +66,18 @@ async def consulta_ensamble(ctx, nombre):
                     v = int(x[5])
                     pu = int(x[6])
                     ll = int(x[7])
-                    embed.add_field(name="- Costo papeles: $",
-                                    value=salida2.format(papeles), inline=False)
-                    embed.add_field(name="- Hierro: ",
-                                    value=h, inline=False)
-                    embed.add_field(name="- Plástico: ",
-                                    value=p, inline=False)
-                    embed.add_field(name="- Vidrio: ",
-                                    value=v, inline=False)
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
                     embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
                                           colour=0x13D8)
+                    embed.add_field(name="- Costo papeles: $",
+                                    value=salida2.format(papeles), inline=False)
+                    embed.add_field(name="- Hierro: ",
+                                    value="\t"+h, inline=False)
+                    embed.add_field(name="- Plástico: ",
+                                    value="\t"+p,online=False)
+                    embed.add_field(name="- Vidrio: ",
+                                    value="\t"+v, inline=False)
                     embed.set_image(url=img)
 
-    await ctx.send(embed=embed)
+    await channel.send(embed=embed)
 bot.run(os.environ['tokendiscord'])

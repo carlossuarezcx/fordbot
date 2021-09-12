@@ -49,7 +49,7 @@ async def consulta_ex(ctx):
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
-    if ctx.channel.id != 886060649103384627:
+    if ctx.channel.id != 886648459149594694:
         return
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
@@ -70,13 +70,13 @@ async def consulta_ensamble(ctx, nombre):
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
                     embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
                                           colour=0x13D8)
-                    embed.add_field(name="- Costo papeles: $",
+                    embed.add_field(name="Costo papeles:",
                                     value=salida2.format(papeles), inline=False)
-                    embed.add_field(name="- Hierro: ",
+                    embed.add_field(name="Hierro: ",
                                     value="\t"+str(h), inline=False)
-                    embed.add_field(name="- Plástico: ",
+                    embed.add_field(name="Plástico: ",
                                     value="\t"+str(p), inline=False)
-                    embed.add_field(name="- Vidrio: ",
+                    embed.add_field(name="Vidrio: ",
                                     value="\t"+str(v), inline=False)
                     embed.set_image(url=img)
 

@@ -36,10 +36,13 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Hola, ella no tiene precio, por más dinero que tengas nunca te alcanzará c:", colour=0x13D8)
         embed.set_image(url=img)
     elif lower == "lavin":
-
         img = "https://site-static.up-cdn.com/f/7e65ffa29ed72bf6902b2068f13931ebf0148d415e03cc6e42af521165ac72ec04e91cd5488cbd45/960x960"
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha es gratis, cualquiera puede tenerla.", colour=0x13D8)
         embed.set_image(url=img)
+    elif lower == "calleja":
+       # img = "https://site-static.up-cdn.com/f/7e65ffa29ed72bf6902b2068f13931ebf0148d415e03cc6e42af521165ac72ec04e91cd5488cbd45/960x960"
+        embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
+        #embed.set_image(url=img)
     await ctx.send(embed=embed)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
@@ -50,6 +53,8 @@ async def consulta_ex(ctx):
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
     if ctx.channel.id != 886648459149594694:
+        return
+    if ctx.channel.id != 886060649103384627:
         return
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()

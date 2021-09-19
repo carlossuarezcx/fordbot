@@ -1,9 +1,9 @@
 import os
 import discord
 from discord.ext import commands
-hierro = 40
-plastico = 210
-vidrio = 210
+hierro = 37
+plastico = 180
+vidrio = 180
 bot = commands.Bot(command_prefix ='/')
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):

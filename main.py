@@ -44,6 +44,11 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
+@bot.command(name='aviso')
+async def aviso_ex(ctx):
+    channel = bot.get_channel(886060649103384627)
+    texto = "**Buenos días, se han actualizado los vehículos exclusivos.**\n_20 de Septiembre del 2021._"
+    await channel.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"

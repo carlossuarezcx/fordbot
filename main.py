@@ -46,7 +46,7 @@ async def consulta_precio(ctx, nombre):
     await ctx.send(embed=embed)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana.**_\n- Adder\n- Autarch\n- Banshee 2\n- Deveste\n- Prototipo\n- Stafford_"
+    texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
     await ctx.send(texto)
 
 @bot.command(name='cotizar')

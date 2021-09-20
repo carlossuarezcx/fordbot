@@ -1,9 +1,9 @@
 import os
 import discord
 from discord.ext import commands
-hierro = 40
-plastico = 210
-vidrio = 210
+hierro = 37
+plastico = 180
+vidrio = 180
 bot = commands.Bot(command_prefix ='/')
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
@@ -52,9 +52,9 @@ async def consulta_ex(ctx):
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
-    if ctx.channel.id != 886648459149594694:
-        return
-    if ctx.channel.id != 886060649103384627:
+    if ctx.channel.id == 886648459149594694 or ctx.channel.id == 886060649103384627:
+        pass 
+    else:
         return
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()

@@ -46,8 +46,8 @@ async def consulta_precio(ctx, nombre):
     await ctx.send(embed=embed)
 @bot.command(name='aviso')
 async def aviso_ex(ctx):
-    channel = bot.get_channel(886060649103384627)
-    texto = "**Buenos días, se han actualizado los vehículos exclusivos.**\n_20 de Septiembre del 2021._"
+    channel = bot.get_channel(885980213463367772)
+    texto = "**Buenos días, se han actualizado los vehículos exclusivos.**\n20 de Septiembre del 2021."
     await channel.send(texto)
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):

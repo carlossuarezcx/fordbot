@@ -7,6 +7,7 @@ hierro = 37
 plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
+guild_ids = [886648459149594694]
 slash = SlashCommand(bot, sync_commands=True)
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
@@ -98,7 +99,7 @@ async def consulta_ensamble(ctx, nombre):
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
     await ctx.send(texto)
-@slash.slash(name='cotizar',  description="Muestra los materiales necesarios del vehículo ingresado")
+@slash.slash(name='cotizar',  description="Muestra los materiales necesarios del vehículo ingresado", guild_ids=guild_ids)
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
     if ctx.channel.id == 886648459149594694 or ctx.channel.id == 886060649103384627:

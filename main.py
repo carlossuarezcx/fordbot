@@ -7,7 +7,8 @@ hierro = 37
 plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
-slash = SlashCommand(bot, sync_commands=True)
+client = discord.client(intents=discord.Intents.all())
+slash = SlashCommand(client, sync_commands=True)
 
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):

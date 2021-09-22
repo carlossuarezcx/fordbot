@@ -175,4 +175,4 @@ async def consulta_precio(ctx, nombre):
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
 
-    bot.run(os.environ['tokendiscord'])
+bot.run(os.environ['tokendiscord'])

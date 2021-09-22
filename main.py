@@ -1,7 +1,7 @@
 import os
 import discord
 from discord.ext import commands
-from discord_slash import SlashCommand
+from discord_slash import SlashCommand, SlashContext
 
 hierro = 37
 plastico = 180
@@ -100,9 +100,9 @@ async def consulta_ensamble(ctx, nombre):
     async def consulta_ex(ctx):
         texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
         await ctx.send(texto)
-
-
-
-
+    @slash.slash(name="test")
+    async  def test (ctx: SlashContext):
+        embed = discord.Embed(title="Embed Test")
+        await ctx.send(embed=embed)
 
 bot.run(os.environ['tokendiscord'])

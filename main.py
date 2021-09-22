@@ -1,10 +1,14 @@
 import os
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand
+
 hierro = 37
 plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
+slash = SlashCommand(bot, sync_commands=True)
+
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
@@ -91,4 +95,14 @@ async def consulta_ensamble(ctx, nombre):
                     embed.set_image(url=img)
 
     await ctx.send(embed=embed)
+
+    @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
+    async def consulta_ex(ctx):
+        texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
+        await ctx.send(texto)
+
+
+
+
+
 bot.run(os.environ['tokendiscord'])

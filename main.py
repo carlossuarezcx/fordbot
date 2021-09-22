@@ -2,12 +2,10 @@ import os
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
-
 hierro = 37
 plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
-guild_ids = [886648459149594694]
 slash = SlashCommand(bot, sync_commands=True)
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
@@ -99,43 +97,6 @@ async def consulta_ensamble(ctx, nombre):
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
     await ctx.send(texto)
-@slash.slash(name='cotizar',  description="Muestra los materiales necesarios del vehículo ingresado", guild_ids=guild_ids)
-async def consulta_ensamble(ctx, nombre):
-    lower = nombre.lower()
-    if ctx.channel.id == 886648459149594694 or ctx.channel.id == 886060649103384627:
-        pass
-    else:
-        return
-    with open('autoscsvtxt.txt', newline='') as File:
-        datos = File.readlines()
-        embed = discord.Embed(title="**Hola.**",
-                              description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nFord Motor Company agradece tu preferencia.",
-                              colour=0x13D8)
-        for row in datos:
-            if lower in row:
-                x = row.split(",")
-                if (x[0] == lower):
-                    salida2 = "${:,}"
-                    papeles = int(x[2])
-                    h = int(x[3])
-                    p = int(x[4])
-                    v = int(x[5])
-                    pu = int(x[6])
-                    ll = int(x[7])
-                    img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
-                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
-                                          colour=0x13D8)
-                    embed.add_field(name="Costo papeles:",
-                                    value=salida2.format(papeles), inline=False)
-                    embed.add_field(name="Hierro: ",
-                                    value="\t"+str(h), inline=False)
-                    embed.add_field(name="Plástico: ",
-                                    value="\t"+str(p), inline=False)
-                    embed.add_field(name="Vidrio: ",
-                                    value="\t"+str(v), inline=False)
-                    embed.set_image(url=img)
-
-    await ctx.send(embed=embed)
 @slash.slash(name='precio',  description="Muestra el precio total del vehículo")
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()

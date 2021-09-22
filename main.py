@@ -8,7 +8,6 @@ plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
 slash = SlashCommand(bot, sync_commands=True)
-guild_ids = [886060649103384627]
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
@@ -96,12 +95,11 @@ async def consulta_ensamble(ctx, nombre):
 
     await ctx.send(embed=embed)
 
-@slash.slash(name="test", guild_ids=guild_ids)
+@slash.slash(name="test")
 async def _test(ctx):
   await ctx.send("test")
 @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
 async def consulta_ex(ctx):
     texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
     await ctx.send(texto)
-
 bot.run(os.environ['tokendiscord'])

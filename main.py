@@ -96,13 +96,13 @@ async def consulta_ensamble(ctx, nombre):
 
     await ctx.send(embed=embed)
 
-    @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
-    async def consulta_ex(ctx):
-        texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
-        await ctx.send(texto)
-    @slash.slash(name="test")
-    async  def test (ctx: SlashContext):
-        embed = discord.Embed(title="Embed Test")
-        await ctx.send(embed=embed)
+@slash.slash(name="test")
+async def test (ctx: SlashContext):
+    embed = discord.Embed(title="Embed Test")
+    await ctx.send(embed=embed)
+@slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
+async def consulta_ex(ctx):
+    texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
+    await ctx.send(texto)
 
 bot.run(os.environ['tokendiscord'])

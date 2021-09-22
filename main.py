@@ -7,7 +7,7 @@ hierro = 37
 plastico = 180
 vidrio = 180
 bot = commands.Bot(command_prefix ='/')
-client = discord.client(intents=discord.Intents.all())
+client = discord.Client(intents=discord.Intents.all())
 slash = SlashCommand(client, sync_commands=True)
 
 @bot.command(name='precio')

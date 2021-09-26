@@ -108,6 +108,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
             if lower in row:
                 x = row.split(",")
                 if(x[0]==lower):
+                    porcentaje = int(porcentaje)
                     salida = "** Vehículo: " + x[0].capitalize() + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
                     salida2 = "\n\tPrecio aportando materiales: **${:,}.**"
                     papeles = int(x[2])
@@ -204,6 +205,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
             if lower in row:
                 x = row.split(",")
                 if(x[0]==lower):
+                    porcentaje = int(porcentaje)
                     salida = "** Vehículo: " + x[0].capitalize() + "**\n\t- Tipo: "+ x[1]+ "\n\t- Precio Total: **${:,}.** "
                     salida2 = "\n\tPrecio aportando materiales: **${:,}.**"
                     papeles = int(x[2])

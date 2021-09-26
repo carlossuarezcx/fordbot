@@ -125,7 +125,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     if img:
                         texto += img
                     embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="\tTipo: " +x[1], colour=0x13D8)
-                    embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
                     if (porcentaje > 50):
@@ -200,7 +200,6 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
-
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -223,7 +222,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     if img:
                         texto += img
                     embed = discord.Embed(title="**"+nombre.capitalize()+"**",  description="\tTipo: " +x[1], colour=0x13D8)
-                    embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (h * hierro) + (p*plastico) + (v * vidrio) + pu+ll), inline = False)
+                    embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
                     if (porcentaje > 50):

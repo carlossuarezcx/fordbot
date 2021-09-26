@@ -140,8 +140,8 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
-@slash.slash(name='precioconmaterial',  description="Muestra el precio total del vehículo proporcionando materiales")
-async def consulta_precio(ctx, nombre, porcentaje):
+@slash.slash(name='precioconmaterial',  description="Muestra el precio total del vehículo proporcionando material.")
+async def consulta_preciomaterial(ctx, nombre, porcentaje):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()

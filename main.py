@@ -116,9 +116,9 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     v=int(x[5])
                     pu=int(x[6])
                     ll=int(x[7])
-                    totalh = regla(h,porcentaje)
-                    totalp = regla(p,porcentaje)
-                    totalv = regla(v, porcentaje)
+                    totalh = regla(h,int(porcentaje))
+                    totalp = regla(p,int(porcentaje))
+                    totalv = regla(v,int(porcentaje))
                     texto = salida.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll)
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+lower+".png"
                     if img:
@@ -212,9 +212,10 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     v=int(x[5])
                     pu=int(x[6])
                     ll=int(x[7])
-                    totalh = regla(h,porcentaje)
-                    totalp = regla(p,porcentaje)
-                    totalv = regla(v, porcentaje)
+                    totalh = regla(h,int(porcentaje))
+                    totalp = regla(p,int(porcentaje))
+                    totalv = regla(v,int(porcentaje))
+
                     texto = salida.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll)
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/"+lower+".png"
                     if img:

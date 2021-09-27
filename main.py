@@ -50,14 +50,10 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
-@bot.command(name='aviso')
-async def aviso_ex(ctx):
-    channel = bot.get_channel(885980213463367772)
-    texto = "**Buenos días, se han actualizado los vehículos exclusivos.**\n20 de Septiembre del 2021."
-    await channel.send(texto)
+
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
+    texto = "**Vehículos exclusivos de la semana. (27 / 09 / 2021)**_\n- Adder\n- Bestiagts\n- Penetrator\n- Prototipo\n- Stafford\n- Tropos\n- Xls2_"
     await ctx.send(texto)
 
 @bot.command(name='cotizar')
@@ -153,7 +149,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
 
 @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana.**_\n- Baller 5\n- Chimera\n- Coquette 4\n- Cyclone\n- Novak\n- Osiris\n- Ztype_"
+    texto = "**Vehículos exclusivos de la semana. (27 / 09 / 2021)**_\n- Adder\n- Bestiagts\n- Penetrator\n- Prototipo\n- Stafford\n- Tropos\n- Xls2_"
     await ctx.send(texto)
 @slash.slash(name='precio',  description="Muestra el precio total del vehículo")
 async def consulta_precio(ctx, nombre):

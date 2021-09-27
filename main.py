@@ -128,9 +128,9 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
-                    if (porcentaje > 70):
+                    if (porcentaje > 80):
                         embed = discord.Embed(title="**Hola.**",
-                                              description="La cantidad máxima de materiales es 50%.\nFord Motor Company agradece tu preferencia.",
+                                              description="La cantidad máxima de materiales es 80%.\nFord Motor Company agradece tu preferencia.",
                                               colour=0x13D8)
                     if (porcentaje <=0):
                         embed = discord.Embed(title="**Hola.**",
@@ -225,9 +225,9 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                     embed.add_field(name="*Incluye costos de logística*", value = salida2.format(papeles + (totalh* hierro) + ( totalp  * plastico) + (totalv * vidrio) + pu+ll), inline = False)
                     embed.set_image(url=img)
 
-                    if (porcentaje > 70):
+                    if (porcentaje > 80):
                         embed = discord.Embed(title="**Hola.**",
-                                              description="La cantidad máxima de materiales es 50%.\nFord Motor Company agradece tu preferencia.",
+                                              description="La cantidad máxima de materiales es 80%.\nFord Motor Company agradece tu preferencia.",
                                               colour=0x13D8)
                     if (porcentaje <=0):
                         embed = discord.Embed(title="**Hola.**",

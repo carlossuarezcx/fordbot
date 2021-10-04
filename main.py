@@ -53,7 +53,7 @@ async def consulta_precio(ctx, nombre):
 
 @bot.command(name='exclusivos')
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana. (27 / 09 / 2021)**_\n- Adder\n- Bestiagts\n- Penetrator\n- Prototipo\n- Stafford\n- Tropos\n- Xls2_"
+    texto = "**Vehículos exclusivos de la semana.\n(04 / 10 / 2021)**_\n- Baller 6\n- Fusilade\n- Hakuchou\n- Schlagen\n- Open Wheel 2\n- itali RSX_"
     await ctx.send(texto)
 
 @bot.command(name='cotizar')
@@ -149,7 +149,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
 
 @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana. (27 / 09 / 2021)**_\n- Adder\n- Bestiagts\n- Penetrator\n- Prototipo\n- Stafford\n- Tropos\n- Xls2_"
+    texto = "**Vehículos exclusivos de la semana.\n(04 / 10 / 2021)**_\n- Baller 6\n- Fusilade\n- Hakuchou\n- Schlagen\n- Open Wheel 2\n- itali RSX_"
     await ctx.send(texto)
 @slash.slash(name='precio',  description="Muestra el precio total del vehículo")
 async def consulta_precio(ctx, nombre):

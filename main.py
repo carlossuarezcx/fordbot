@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
-hierro = 35
+hierro = 40
 plastico = 170
 vidrio = 170
 bot = commands.Bot(command_prefix ='/')
@@ -16,7 +16,7 @@ async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
-        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
+        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -66,7 +66,7 @@ async def consulta_ensamble(ctx, nombre):
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**",
-                              description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nFord Motor Company agradece tu preferencia.",
+                              description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nPremium Deluxe Motorsport agradece tu preferencia.",
                               colour=0x13D8)
         for row in datos:
             if lower in row:
@@ -98,7 +98,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
-        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
+        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)
 
         for row in datos:
             if lower in row:
@@ -130,7 +130,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
                                               colour=0x13D8)
                     if (porcentaje <=0):
                         embed = discord.Embed(title="**Hola.**",
-                                              description="La cantidad no es válida. Utliza **/precio _nombrevehículo_**\nFord Motor Company agradece tu preferencia.",
+                                              description="La cantidad no es válida. Utliza **/precio _nombrevehículo_**\nPremium Deluxe Motorsport agradece tu preferencia.",
                                               colour=0x13D8)
 
     if lower == "effy":
@@ -156,7 +156,7 @@ async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
-        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
+        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -195,7 +195,7 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
     lower = nombre.lower()
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
-        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nFord Motor Company agradece tu preferencia.", colour=0x13D8)
+        embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)
         for row in datos:
             if lower in row:
                 x = row.split(",")
@@ -223,11 +223,11 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
 
                     if (porcentaje > 80):
                         embed = discord.Embed(title="**Hola.**",
-                                              description="La cantidad máxima de materiales es 80%.\nFord Motor Company agradece tu preferencia.",
+                                              description="La cantidad máxima de materiales es 80%.\nPremium Deluxe Motorsport agradece tu preferencia.",
                                               colour=0x13D8)
                     if (porcentaje <=0):
                         embed = discord.Embed(title="**Hola.**",
-                                              description="La cantidad no es válida. Utliza **/precio _nombrevehículo_**\nFord Motor Company agradece tu preferencia.",
+                                              description="La cantidad no es válida. Utliza **/precio _nombrevehículo_**\nPremium Deluxe Motorsport agradece tu preferencia.",
                                               colour=0x13D8)
 
     if lower == "effy":

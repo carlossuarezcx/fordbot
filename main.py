@@ -50,12 +50,6 @@ async def consulta_precio(ctx, nombre):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
-
-@bot.command(name='exclusivos')
-async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana.\n(25 / 10 / 2021)**_\n- Baller 5\n- Gauntlet 5\n- Penetrator\n- Stockade 3\n- Swift 2\n- Turismo 2_"
-    await ctx.send(texto)
-
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
@@ -147,9 +141,13 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
 
+@bot.command(name='exclusivos')
+async def consulta_ex(ctx):
+    texto = "**Vehículos exclusivos de la semana.\n(01 / 11 / 2021)**_\n- Btype 2\n- Entity 2\n- Fmj\n- Nightblade\n- Streiter\n- Supervolito 2\n- Vagner_"
+    await ctx.send(texto)
 @slash.slash(name='exclusivos',  description="Muestra los vehículos exclusivos")
 async def consulta_ex(ctx):
-    texto = "**Vehículos exclusivos de la semana.\n(25 / 10 / 2021)**_\n- Baller 5\n- Gauntlet 5\n- Penetrator\n- Stockade 3\n- Swift 2\n- Turismo 2_"
+    texto = "**Vehículos exclusivos de la semana.\n(01 / 11 / 2021)**_\n- Btype 2\n- Entity 2\n- Fmj\n- Nightblade\n- Streiter\n- Supervolito 2\n- Vagner_"
     await ctx.send(texto)
 @slash.slash(name='precio',  description="Muestra el precio total del vehículo")
 async def consulta_precio(ctx, nombre):

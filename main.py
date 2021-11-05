@@ -55,6 +55,8 @@ async def consulta_precio(ctx, nombre):
 @bot.command(name='cotizar')
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
+    if " " in lower:
+        lower= lower.replace(" ","")
     if ctx.channel.id == 886648459149594694 or ctx.channel.id == 886060649103384627:
         pass 
     else:

@@ -14,6 +14,8 @@ def regla(material, porcentaje):
 @bot.command(name='precio')
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
+    if " " in lower:
+        lower= lower.replace(" ","")
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)
@@ -152,6 +154,8 @@ async def consulta_ex(ctx):
 @slash.slash(name='precio',  description="Muestra el precio total del vehículo")
 async def consulta_precio(ctx, nombre):
     lower = nombre.lower()
+    if " " in lower:
+        lower= lower.replace(" ","")
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**", description="Todo parece indicar que aún no contamos con "+nombre.capitalize()+".\nPremium Deluxe Motorsport agradece tu preferencia.", colour=0x13D8)

@@ -2,9 +2,9 @@ import os
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
-hierro = 40
-plastico = 170
-vidrio = 170
+hierro = 30
+plastico = 140
+vidrio = 140
 bot = commands.Bot(command_prefix ='/')
 slash = SlashCommand(bot, sync_commands=True)
 def regla(material, porcentaje):
@@ -57,10 +57,6 @@ async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
     if " " in lower:
         lower= lower.replace(" ","")
-    if ctx.channel.id == 886648459149594694 or ctx.channel.id == 886060649103384627:
-        pass 
-    else:
-        return
     with open('autoscsvtxt.txt', newline='') as File:
         datos = File.readlines()
         embed = discord.Embed(title="**Hola.**",
@@ -247,4 +243,40 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
+
+@slash.slash(name='cotizar',  description="Muestra la cantidad de materiales del vehículo")
+async def consulta_ensamble(ctx, nombre):
+    lower = nombre.lower()
+    if " " in lower:
+        lower= lower.replace(" ","")
+    with open('autoscsvtxt.txt', newline='') as File:
+        datos = File.readlines()
+        embed = discord.Embed(title="**Hola.**",
+                              description="Todo parece indicar que aún no contamos con " + nombre.capitalize() + ".\nPremium Deluxe Motorsport agradece tu preferencia.",
+                              colour=0x13D8)
+        for row in datos:
+            if lower in row:
+                x = row.split(",")
+                if (x[0] == lower):
+                    salida2 = "${:,}"
+                    papeles = int(x[2])
+                    h = int(x[3])
+                    p = int(x[4])
+                    v = int(x[5])
+                    pu = int(x[6])
+                    ll = int(x[7])
+                    img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
+                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
+                                          colour=0x13D8)
+                    embed.add_field(name="Costo papeles:",
+                                    value=salida2.format(papeles), inline=False)
+                    embed.add_field(name="Hierro: ",
+                                    value="\t"+str(h), inline=False)
+                    embed.add_field(name="Plástico: ",
+                                    value="\t"+str(p), inline=False)
+                    embed.add_field(name="Vidrio: ",
+                                    value="\t"+str(v), inline=False)
+                    embed.set_image(url=img)
+
+    await ctx.send(embed=embed)  
 bot.run(os.environ['tokendiscord'])

@@ -2,9 +2,9 @@ import os
 import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
-hierro = 30
-plastico = 140
-vidrio = 140
+hierro = 35
+plastico = 145
+vidrio = 145
 bot = commands.Bot(command_prefix ='/')
 slash = SlashCommand(bot, sync_commands=True)
 def regla(material, porcentaje):

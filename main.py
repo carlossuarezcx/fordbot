@@ -7,6 +7,7 @@ plastico = 145
 vidrio = 145
 bot = commands.Bot(command_prefix ='/')
 slash = SlashCommand(bot, sync_commands=True)
+
 def regla(material, porcentaje):
     total = (porcentaje*material) / 100
     return material - int(total)
@@ -279,4 +280,8 @@ async def consulta_ensamble(ctx, nombre):
                     embed.set_image(url=img)
 
     await ctx.send(embed=embed)  
+    
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name="GTA HUB"))
 bot.run(os.environ['tokendiscord'])

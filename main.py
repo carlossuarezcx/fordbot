@@ -283,5 +283,7 @@ async def consulta_ensamble(ctx, nombre):
     
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name="GTA HUB"))
+    activity = discord.Game(name="Netflix", type=3)
+    await bot.change_presence(status=discord.Status.idle, activity=activity)
+    print("Bot is ready!")
 bot.run(os.environ['tokendiscord'])

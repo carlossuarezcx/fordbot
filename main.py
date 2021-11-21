@@ -297,7 +297,7 @@ async def consulta_desguace(ctx, nombre, kilometros):
                     p = int(x[4])-kilometros
                     v = int(x[5])-kilometros
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
-                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
+                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tKilómetros recorridos: " + kilometros,
                                           colour=0x13D8)
                     embed.add_field(name="Hierro: ",
                                     value="\t"+str(h), inline=False)

@@ -244,7 +244,6 @@ async def consulta_preciomaterial(ctx, nombre, porcentaje):
         embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="Esa muchacha no es para cualquiera, vale mucho <3. \n(No hay foto para que no te enamores)", colour=0x13D8)
         #embed.set_image(url=img)
     await ctx.send(embed=embed)
-
 @slash.slash(name='cotizar',  description="Muestra la cantidad de materiales del vehículo")
 async def consulta_ensamble(ctx, nombre):
     lower = nombre.lower()
@@ -278,9 +277,39 @@ async def consulta_ensamble(ctx, nombre):
                     embed.add_field(name="Vidrio: ",
                                     value="\t"+str(v), inline=False)
                     embed.set_image(url=img)
+    await ctx.send(embed=embed)  
+@slash.slash(name='desguazar',  description="Muestra la cantidad de materiales restantes al desguazar")
+async def consulta_desguace(ctx, nombre, kilometros):
+    lower = nombre.lower()
+    if " " in lower:
+        lower= lower.replace(" ","")
+    with open('autoscsvtxt.txt', newline='') as File:
+        datos = File.readlines()
+        embed = discord.Embed(title="**Hola.**",
+                              description="Todo parece indicar que aún no tenemos información para: " + nombre.capitalize() + ".\nPremium Deluxe Motorsport agradece tu preferencia.",
+                              colour=0x13D8)
+        for row in datos:
+            if lower in row:
+                x = row.split(",")
+                if (x[0] == lower):
+                    kilometros = int(kilometros)
+                    h = int(x[3]-kilometros)
+                    p = int(x[4]-kilometros)
+                    v = int(x[5]-kilometros)
+                    img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
+                    embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
+                                          colour=0x13D8)
+                    embed.add_field(name="Hierro: ",
+                                    value="\t"+str(h), inline=False)
+                    embed.add_field(name="Plástico: ",
+                                    value="\t"+str(p), inline=False)
+                    embed.add_field(name="Vidrio: ",
+                                    value="\t"+str(v), inline=False)
+                    embed.add_field(name="(Función en etapa experimental, no se garantiza el resultado))",
+                                    value=":)", inline=False)
+                    embed.set_image(url=img)
 
     await ctx.send(embed=embed)  
-    
 @bot.event
 async def on_ready():
     activity = discord.Game(name="RAGE Multiplayer", type=3)

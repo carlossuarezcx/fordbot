@@ -293,9 +293,9 @@ async def consulta_desguace(ctx, nombre, kilometros):
                 x = row.split(",")
                 if (x[0] == lower):
                     kilometros = int(kilometros)
-                    h = int(x[3]-kilometros)
-                    p = int(x[4]-kilometros)
-                    v = int(x[5]-kilometros)
+                    h = int(x[3])-kilometros
+                    p = int(x[4])-kilometros
+                    v = int(x[5])-kilometros
                     img = "\nhttps://site-static.up-cdn.com/modules/gtav/vehiculos/res/vehicles/" + lower + ".png"
                     embed = discord.Embed(title="**" + nombre.capitalize() + "**", description="\tTipo: " + x[1],
                                           colour=0x13D8)

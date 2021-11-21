@@ -305,8 +305,8 @@ async def consulta_desguace(ctx, nombre, kilometros):
                                     value="\t"+str(p), inline=False)
                     embed.add_field(name="Vidrio: ",
                                     value="\t"+str(v), inline=False)
-                    embed.add_field(name="Disclaimer:",
-                                    value="Función en etapa experimental, no se garantiza el resultado. \n Recuerda que hay vehículos comprados en puntos de venta, los cuales no te darán nada al desguazar.", inline=False)
+                    embed.add_field(name="\n\nDisclaimer:",
+                                    value="Función en etapa experimental, no se garantiza el resultado.\nRecuerda que hay vehículos comprados en puntos de venta, los cuales no te darán nada al desguazar.", inline=False)
                     embed.set_image(url=img)
 
     await ctx.send(embed=embed)  
